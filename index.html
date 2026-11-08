@@ -493,7 +493,6 @@
       <div><small id="fEtaL">Llegada</small><span id="fEta">--:--</span></div>
     </div>
     <div class="legs w" data-legs></div>
-    <p class="note" id="fNote"></p>
     <div class="her" id="fHer"></div>
   </section>
 
@@ -1171,7 +1170,6 @@ function renderFlight(t, i) {
   else if (down < 15) over = 'Aterrizando en ' + B.city + '…';
   else over = 'Sobrevolando ' + (L.over.find(o => k <= o[0]) || L.over[L.over.length - 1])[1];
   setText('fOver', over);
-  setText('fNote', L.fly);
   setText('fHer', 'En Dubái son las ' + fmtTime(t, 'Asia/Dubai'));
   if (!window.d3) { $('liveMap').style.display = 'none'; return; }
   const wantW = Math.round(Math.min(innerWidth - 32, 460));
