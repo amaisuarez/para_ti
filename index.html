@@ -473,8 +473,6 @@
     </svg>
     <p class="lead" id="aLead">Esperando en la puerta de embarque…</p>
     <div class="mini"><small id="aCountLbl">Despega en</small><b id="aCount">--:--:--</b></div>
-    <p class="note" id="aNote"></p>
-    <div class="her" id="aHer"></div>
     <div class="legs w" data-legs></div>
   </section>
 
@@ -1084,10 +1082,8 @@ function renderAirport(t, ph) {
   setText('bStatus', status);
   $('bStatus').classList.toggle('blink', status === 'EMBARCANDO' || status === 'DESPEGANDO');
   setText('aLead', lead);
-  setText('aNote', note);
   setText('aCountLbl', atGate ? 'Despega en' : 'Próximo vuelo en');
   setText('aCount', toDep > 3 * 3600e3 ? hm(toDep) : hms(toDep));
-  setText('aHer', 'En Dubái son las ' + fmtTime(t, 'Asia/Dubai'));
   setSky(h);
   const taxi = atGate && mins < 6 ? Math.pow(1 - Math.max(0, mins) / 6, 2) * 440 : 0;
   $('parked').setAttribute('transform', 'translate(' + (-taxi).toFixed(1) + ' 0)');
